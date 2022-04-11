@@ -1,16 +1,15 @@
-const profileDataArgs = process.argv.slice(2);
-const printProfileData = (profileDataArr) => {
-  // This...
+const profileDataArgs = process.argv.slice(2, process.argv.length);
 
-  for (let i = 0; i < profileDataArr.length; i += 1) {
-    console.log(profileDataArr[i]);
-  }
+const name = profileDataArgs[0];
+const github = profileDataArgs[1];
 
-  console.log("================");
+const generatePage = (userName, gitHubName) => {
+  return `
 
-  // Is the sam as this...
+Name: ${userName}
+Github: ${gitHubName}
 
-  profileDataArr.forEach((profileItem) => console.log(profileItem));
+`;
 };
 
-printProfileData(profileDataArgs);
+console.log(generatePage(name, github));
